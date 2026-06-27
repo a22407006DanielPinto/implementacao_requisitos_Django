@@ -1,0 +1,20 @@
+<html>
+<body>
+
+<h2>Cursos:</h2>
+
+<ul>
+{% for curso in cursos.nome %}
+    <li>Cursos: {{curso.nome}}</li>
+        <p>Professor: {{curso.professor.nome}}</p>
+        <p>Estudantes:</p>
+        <ul>
+        {% for estudante in curso.estudantes.all %}
+            <li><a href="{% url 'estudante_view' estudante.id}">{{estudante.nome}}</a></li>
+        {% endfor %}
+        </ul>
+{% endfor %}
+</ul>
+
+<body>
+</html>

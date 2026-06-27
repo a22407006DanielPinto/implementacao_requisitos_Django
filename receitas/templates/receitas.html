@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <h2>Receitas:</h2>
+        <ul>
+            {% for receita in receitas %}
+                <li>Receita: {{receita.nome}}</li>
+                    <p>Criador: <a href="{% url 'utilizador_view' receita.criador.id %}">{{receita.criador.nome}}</a></p>
+                    <p>Ingredientes:</p>
+                    {% for ingrediente in receita.ingredientes.all %}
+                        <p>{{ingrediente.nome}}</p>
+                    {% endfor %}
+            {% endfor %}
+        </ul>
+    </body>
+</html>
