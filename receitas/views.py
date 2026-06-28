@@ -5,7 +5,7 @@ def receitas_view(request):
     receitas = Receita.objects.all()
     return render(request, 'receitas.html', {'receitas': receitas})
 
-def utilizadores_view(request, id):
+def utilizador_view(request, id):
     utilizador = get_object_or_404(Utilizador, id=id)
     return render(request, 'utilizador.html', {'utilizador': utilizador})
 

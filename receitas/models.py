@@ -14,8 +14,8 @@ class Ingrediente(models.Model):
 
 class Receita(models.Model):
     nome = models.CharField(max_length=100)
-    criador = models.ForeignKey(Utilizador, on_delete=models.CASCADE, related_name='receitas')
-    ingredientes = models.ManyToManyField(Ingrediente, related_name='receitas_criadas')
+    criador = models.ForeignKey(Utilizador, on_delete=models.CASCADE, related_name='receitas_criadas')
+    ingredientes = models.ManyToManyField(Ingrediente, related_name='receitas')
     favoritos = models.ManyToManyField(Utilizador, related_name='receitas_favoritas')
 
     def __str__(self):
